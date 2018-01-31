@@ -4,9 +4,12 @@
 * auth0-spring-security-api
 
 ## Step1
-* Generate application_url (eg: https://webcome.auth0.com/oauth/token) client_id and client_secret from your auth0 dashboard
+* Update Audience and Issuer in com.core.Auth0SecConfig
 
 ## Step2
+* Generate application_url (eg: https://webcome.auth0.com/oauth/token) client_id and client_secret from your auth0 dashboard
+
+## Step3
 
 ```
 curl --request POST --url {application_url} --header 'content-type: application/json' --data '{"client_id":"{from your dashboard}","client_secret":"{from your dashboard}","audience":"http://localhost:8080/auth0eg","grant_type":"client_credentials"}' ```
@@ -14,7 +17,7 @@ curl --request POST --url {application_url} --header 'content-type: application/
 * copy the access_token from the response
 
 
-## Step3
+## Step4
 curl -X GET -H "Authorization: Bearer {access_toke}" -H "Cache-Control: no-cache" "http://localhost:8080/sapi/home/1"
 
 * you will see a response something like the following:
